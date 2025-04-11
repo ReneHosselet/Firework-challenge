@@ -1,15 +1,14 @@
-import { defineConfig } from "vite";
-import path from "path";
-import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
 
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"), // Alias for src directory
-    },
-  },
+  base: './', // Change this to match your subdirectory on the server
+  publicDir: 'public',
   build: {
-    assetsInlineLimit: 0, // Ensure assets are not inlined
-  },
-});
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+  }
+})

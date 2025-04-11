@@ -18,7 +18,6 @@ import Firework from "./Firework";
 import { randomIntFromInterval } from "./helper";
 import { Leva, useControls } from "leva";
 import DynamicSpotlight, { DynamicSpotlightRef } from "./Lights";
-import crtTvModel from '@/assets/models/crt_tv_2.glb'; // Import the GLB file
 
 const cameraSettings = {
   fov: 30,
@@ -26,6 +25,8 @@ const cameraSettings = {
   far: 1000,
   position: new Vector3(0, 0, -5),
 };
+
+const crtTvModel = "./models/crt_tv_2.glb";
 
 const Scene = () => {
   const [ref, setRef] = useState<any>(null);
